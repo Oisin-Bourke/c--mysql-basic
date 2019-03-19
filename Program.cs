@@ -47,8 +47,6 @@ namespace Assignment6
 
             Console.WriteLine("Days remining on contract # "+ clientsList[0].MyContracts[2].Client_Id+" is: "+daysRemaining.Days+"\n");
 
-
-
             //average contract value per client:
             foreach(Client client in clientsList)
             {
@@ -57,6 +55,13 @@ namespace Assignment6
                 Console.WriteLine("The average contract value for "+client.Client_Name+" is: €"+Math.Round(average,2));
 
             }
+
+            Console.WriteLine();
+
+            //number open contracts:
+            int numberOpenContracts = calc.TotalNumberContractsCurrentlyOpen(clientsList);
+
+            Console.WriteLine("There are currently " + numberOpenContracts + " open contracts.");
 
         }
     }

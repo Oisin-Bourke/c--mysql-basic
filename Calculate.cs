@@ -67,10 +67,26 @@ namespace Assignment6
         }
 
         //total number of contracts currently open:
-        public int TotalNumberContractsCurrentlyOpen()
+        public int TotalNumberContractsCurrentlyOpen(List<Client>clients)
         {
+            int openContracts = 0;
 
-            return 0;
+            DateTime now = DateTime.Now;
+
+            foreach (Client client in clients)
+            {
+                foreach (Contract contract in client.MyContracts)
+                {
+                    int x = contract.Date_Close.CompareTo(now);
+
+                    if (x == 1)
+                    {
+                        openContracts++;
+                    }
+                }
+            }
+
+            return openContracts;
         }
     }
 }
