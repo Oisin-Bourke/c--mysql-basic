@@ -42,6 +42,9 @@ namespace Assignment6
 
             Console.WriteLine("The average contract duration in days is: "+averageInDays);
 
+            //time remaining on contract:
+            calc.TimeRemainingOnContract(clientsList.);
+
 
         }
     }
