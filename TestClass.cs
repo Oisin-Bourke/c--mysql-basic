@@ -59,5 +59,21 @@ namespace Assignment6
             Assert.AreNotEqual(20, result);
             Assert.NotNull(clients);
         }
+
+        [Test]
+        public void TimeRemainingOnContractTest()
+        {
+            DateTime dateClose = new DateTime(2019,03,23);
+            Contract contract = new Contract();
+            contract.Date_Close = dateClose;
+
+            Console.WriteLine("TESTING - time remaining from now to 3 days time");
+            Calculate calculate = new Calculate();
+            TimeSpan duration = calculate.TimeRemainingOnContract(contract);
+            Assert.AreEqual(3, duration.Days);
+            Assert.AreNotEqual(2, duration.Days);
+
+        }
+
     }
 }

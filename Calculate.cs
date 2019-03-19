@@ -42,11 +42,13 @@ namespace Assignment6
             return averageContractDurDays;
         }
 
-        public int TimeRemainingOnContract(Contract contract)
+        public TimeSpan TimeRemainingOnContract(Contract contract)
         {
+            DateTime now = DateTime.Now;
 
+            TimeSpan timeRemaining =  contract.Date_Close.Subtract(now);
 
-            return 0;
+            return timeRemaining;
         }
     }
 }

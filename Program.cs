@@ -40,11 +40,12 @@ namespace Assignment6
             //average contract duration (in days):
             int averageInDays = calc.AverageContractDurarion(clientsList);
 
-            Console.WriteLine("The average contract duration in days is: "+averageInDays);
+            Console.WriteLine("The average contract duration in days is: "+averageInDays+"\n");
 
             //time remaining on contract:
-            calc.TimeRemainingOnContract(clientsList.);
+            TimeSpan daysRemaining = calc.TimeRemainingOnContract(clientsList[0].MyContracts[2]);
 
+            Console.WriteLine("Days remining on contract # "+ clientsList[0].MyContracts[2].Client_Id+" is: "+daysRemaining.Days);
 
         }
     }
