@@ -7,21 +7,35 @@ namespace Assignment6
     {
         public static void Main(string[] args)
         {
-
+            //this populates the DB only if it is empty:
             SeedData.SeedDB();
 
+            //am instance of db Interface to call DB methods:
             DBInterface db = new DBInterface();
 
+            //read all clients:
             db.ReadClientsFromDB();
 
+            //read all contracts:
             db.ReadContractsFromDB();
 
-            List <Client> clients = db.DeserializeDB();
+            Console.WriteLine("\nDeserialized Clients with Contracts List:");
 
-            foreach (Client client in clients)
+            //deserialize the database:
+            List <Client> clientsList = db.DeserializeDB();
+
+            foreach (Client client in clientsList)
             {
                 Console.WriteLine(client);
             }
+
+            //an instance of Calculate to call the various calculation methods:
+            Calculate calc = new Calculate();
+
+            double result = calc.OverallAverageNumberOfContractsPerCleint(clientsList);
+
+            Console.WriteLine("The result is: "+result);
+
 
         }
     }

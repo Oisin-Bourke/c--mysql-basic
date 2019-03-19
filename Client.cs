@@ -3,6 +3,7 @@ using System.Text;
 
 namespace Assignment6
 {
+
     public class Client
     {
         //each client has a list of contracts:
@@ -54,7 +55,6 @@ namespace Assignment6
                             + " | Close Date: " + contract.Date_Close 
                             + " | Total Value :€" + contract.Total_Value);
             }
-
             return sb.ToString();
         }
 
