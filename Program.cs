@@ -32,9 +32,15 @@ namespace Assignment6
             //an instance of Calculate to call the various calculation methods:
             Calculate calc = new Calculate();
 
+            //overeall average number of contracts per client:
             double result = calc.OverallAverageNumberOfContractsPerCleint(clientsList);
 
-            Console.WriteLine("The result is: "+result);
+            Console.WriteLine("The result is: "+result+"\n");
+
+            //average contract duration (in days):
+            int averageInDays = calc.AverageContractDurarion(clientsList);
+
+            Console.WriteLine("The average contract duration in days is: "+averageInDays);
 
 
         }

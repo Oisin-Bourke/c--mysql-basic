@@ -21,5 +21,32 @@ namespace Assignment6
             return average;
         }
 
+        public int AverageContractDurarion(List<Client> clients)
+        {
+            int totalDays = 0;
+
+            int totalContracts = 0;
+
+            foreach (Client client in clients)
+            {
+                foreach(Contract contract in client.MyContracts)
+                {
+                    totalDays += contract.Date_Close.Subtract(contract.Date_Open).Days;
+
+                    totalContracts++;
+                }
+            }
+
+            int averageContractDurDays = totalDays / totalContracts;
+
+            return averageContractDurDays;
+        }
+
+        public int TimeRemainingOnContract(Contract contract)
+        {
+
+
+            return 0;
+        }
     }
 }
