@@ -21,6 +21,7 @@ namespace Assignment6
             return average;
         }
 
+        //average contract duration:
         public int AverageContractDurarion(List<Client> clients)
         {
             int totalDays = 0;
@@ -42,6 +43,7 @@ namespace Assignment6
             return averageContractDurDays;
         }
 
+        //time remaining on a contract:
         public TimeSpan TimeRemainingOnContract(Contract contract)
         {
             DateTime now = DateTime.Now;
@@ -49,6 +51,26 @@ namespace Assignment6
             TimeSpan timeRemaining =  contract.Date_Close.Subtract(now);
 
             return timeRemaining;
+        }
+
+        //the average contract value per client:
+        public double AverageContractValuePerClient(Client client)
+        {
+            double total = 0;
+
+            foreach(Contract contract in client.MyContracts)
+            {
+                total += contract.Total_Value;
+            }
+
+            return total / client.MyContracts.Count;
+        }
+
+        //total number of contracts currently open:
+        public int TotalNumberContractsCurrentlyOpen()
+        {
+
+            return 0;
         }
     }
 }

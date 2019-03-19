@@ -45,7 +45,18 @@ namespace Assignment6
             //time remaining on contract:
             TimeSpan daysRemaining = calc.TimeRemainingOnContract(clientsList[0].MyContracts[2]);
 
-            Console.WriteLine("Days remining on contract # "+ clientsList[0].MyContracts[2].Client_Id+" is: "+daysRemaining.Days);
+            Console.WriteLine("Days remining on contract # "+ clientsList[0].MyContracts[2].Client_Id+" is: "+daysRemaining.Days+"\n");
+
+
+
+            //average contract value per client:
+            foreach(Client client in clientsList)
+            {
+                double average =  calc.AverageContractValuePerClient(client);
+
+                Console.WriteLine("The average contract value for "+client.Client_Name+" is: €"+Math.Round(average,2));
+
+            }
 
         }
     }

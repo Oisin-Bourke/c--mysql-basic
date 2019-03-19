@@ -72,7 +72,26 @@ namespace Assignment6
             TimeSpan duration = calculate.TimeRemainingOnContract(contract);
             Assert.AreEqual(3, duration.Days);
             Assert.AreNotEqual(2, duration.Days);
+        }
 
+        [Test]
+        public void AverageContractValuePerClientTest()
+        {
+            Contract contract1 = new Contract();
+            contract1.Total_Value = 100;
+            Contract contract2 = new Contract();
+            contract2.Total_Value = 200;
+            List<Contract> contracts = new List<Contract>();
+            contracts.Add(contract1);
+            contracts.Add(contract2);
+
+            Client client = new Client();
+            client.MyContracts = contracts;
+
+            Console.WriteLine("TESTING - average contract value per client with 2 contracts of 100 and 200");
+            Calculate calc = new Calculate();
+            double result = calc.AverageContractValuePerClient(client);
+            Assert.AreEqual(150, result);
         }
 
     }
